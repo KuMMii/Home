@@ -1,0 +1,18 @@
+body{background:#F0F0F0;}
+
+#logo{position: relative; width: 460px; height: 125px; line-height: 160px; margin: 0 auto; text-align: center; border: 1px dotted black;}
+img{vertical-align: middle;}
+
+.label{position: relative; width: 460px; height: 45px; margin: 0 auto; font-weight: bold; line-height: 50px; border: 1px dotted grey;}
+.inputText{position: relative; width: 460px; height: 50px; margin: 0 auto; line-height: 50px; text-align: center; background-color: white; color: grey; border: 1px solid silver;}
+
+input[type=text], input[type=password], select{font-size: 110%; border:0; outline: none;}
+
+.ymd{position: relative; width: 460px; height: 50px; text-align: center; margin: 0 auto;}
+    .ymd1{position: relative; float: left; width: 148px; height: 50px; margin-right: 5px; background-color: white; line-height: 60px; border: 1px solid black;}
+    .ymd1:last-child{margin-right: 0;}
+
+.last_menu{position: relative; width: 460px; height: 60px; margin:40px auto;text-align: center; line-height: 60px; }
+    .last_menu ul{list-style: none; margin: 0; padding: 0; display: inline-block;}
+    .last_menu ul li{float: left; padding: 0 5px; font-size: 60%; font-weight: bold; }
+
