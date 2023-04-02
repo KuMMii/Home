@@ -1,0 +1,39 @@
+body{margin: 0 auto;}
+
+#first{position: relative; width: 100%; height: 65px; border-bottom: 1px solid silver; }
+#second{position: relative;width: 100%; height: 75px; margin-bottom: 6px; border-bottom: 1px solid silver;}
+#third{position: relative;width: 100%; height: 560px;  }
+
+#first .view{position: relative; margin: 0 auto; width: 1100px; height: 65px;  border: 1px dotted red;}
+#first .view .left{position: relative; width: 500px; height: 65px; float: left; border: 1px dotted blue;}
+#first .view .left ul{list-style: none; padding: 0; margin: 0; display: inline-block;}
+#first .view .left ul li{float: left; margin-right: 20px; color: grey; line-height: 65px;}
+#first .view .left ul li:nth-child(2){font-weight: bold; color: black; font-size: 110%;}
+
+img{vertical-align: middle;}
+
+.right{position: relative; width: 350px; height: 65px; float: right; line-height: 65px; text-align: right; border: 1px dotted blue;}
+#first .view .right ul{list-style: none; padding: 0; margin: 0; display: inline-block;}   
+#first .view .right ul li{float: right; margin-left: 20px; color: grey;}
+
+
+
+#second .view{position: relative; margin: 0 auto; width: 1100px; height: 75px;  border: 1px dotted red;}
+#second .view .left{position: relative; width: 800px; height: 75px; float: left; line-height: 75px; border: 1px dotted blue;}
+#second .view .left ul{position: relative; padding: 0; margin: 0; list-style: none; display: inline-block;}
+#second .view .left ul li{float: left; margin-right: 30px; color: black; font-size: 120%; font-weight: bold; font-family: verdana;}
+
+#third .view{position: relative; margin: 0 auto; width: 1220px; height: 560px; border: 1px dotted red;}
+.lbutton{position: relative; float: left; width: 58px; height: 560px; border: 1px solid black;}
+.rbutton{position: relative; float: left; width: 58px; height: 560px; border: 1px solid black;}
+.news{position: relative; float: left; width: 1100px; height: 540px; background-color: cadetblue; }
+.newsbox{position: relative; float: left; width: 268px; height: 270px; margin-right: 5px; border: 1px dotted black;}
+    .newsbox :last-child, .newsbox :nth-child(4){margin-right: 0pc;}
+        .images{position: relative; width: 268px; height: 150px; overflow: hidden; }
+        .title{position: relative; width: 250px; height: 100px; margin:10px 9px; border: 1px solid red; font-size: 110%;}
+
+
+
+
+.lbutton .button{position: absolute; width: 50px; height: 50px; border-radius: 50%; top:250px; left: 0; background-image: url(images/ico_movie_171115.png); background-position: -60px -460px; border: 1px solid black;}
+.rbutton .button{position: absolute; width: 50px; float: left; height: 50px; border-radius: 50%; top:250px; right: 0; background-image: url(images/ico_movie_171115.png); background-position: 0px -460px; border: 1px solid black;}
