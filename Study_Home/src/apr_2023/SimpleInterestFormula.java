@@ -1,0 +1,15 @@
+package apr_2023;
+
+import java.math.BigDecimal;
+
+public class SimpleInterestFormula {
+
+	public static void main(String[] args) {
+
+		SimpleInterestCalculator calculator=
+				new SimpleInterestCalculator("4500.00","7.5");
+		BigDecimal totalValue=calculator.calculateTotalValue(5);
+		System.out.println(totalValue);
+	}
+
+}
