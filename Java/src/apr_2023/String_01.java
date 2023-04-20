@@ -9,7 +9,7 @@ public static void main(String[] args) {
 	
 	StringBuilder sb = new StringBuilder("TEst");
 	StringBuffer sbu = new StringBuffer("TEst");
-	//I can change the String with stringbuilder and stringbuffer
+	//I can change the String with string builder and string buffer
 	//StringBuilder is for multithread.
 	sb.setCharAt(1,'e');
 	System.out.println(sb);
