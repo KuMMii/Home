@@ -1,4 +1,4 @@
-package apr_2023;
+package mar_2023;
 
 public class MultiplicationTable {
 	void print() {

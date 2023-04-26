@@ -1,9 +1,10 @@
-package apr_2023;
+package ObjectOrientedProgramming;
 
 public class MotorBike {
 	//state
 	private int speed; //member variable
 	
+	//constructors
 	MotorBike(){
 		this(5);
 	}

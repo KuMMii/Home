@@ -1,4 +1,4 @@
-package apr_2023;
+package Loop;
 
 class WhileNumberPlayer{
 
