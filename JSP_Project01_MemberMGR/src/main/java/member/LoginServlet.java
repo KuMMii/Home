@@ -36,7 +36,7 @@ public class LoginServlet extends HttpServlet {
 		
 		HttpSession session = request.getSession();
 		if(session.getAttribute("loginUser")!=null) {
-			url="main.jsp";
+			url="main.do";
 		}
 		
 		RequestDispatcher rd = request.getRequestDispatcher(url);
@@ -65,7 +65,7 @@ public class LoginServlet extends HttpServlet {
 		}else if(!mdto.getPwd().equals(pwd)) {
 			request.setAttribute("message", "Wrong password");
 		}else if(mdto.getPwd().equals(pwd)) {
-			url="member/main.jsp";
+			url="main.do";
 			
 			HttpSession session=request.getSession();
 			session.setAttribute("loginUser", mdto);

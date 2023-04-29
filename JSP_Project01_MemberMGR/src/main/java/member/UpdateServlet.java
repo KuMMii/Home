@@ -8,21 +8,22 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dao.MemberDao;
 import dto.MemberDto;
 
 /**
- * Servlet implementation class JoinServlet
+ * Servlet implementation class UpdateServlet
  */
-@WebServlet("/join.do")
-public class JoinServlet extends HttpServlet {
+@WebServlet("/update.do")
+public class UpdateServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public JoinServlet() {
+    public UpdateServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -32,7 +33,7 @@ public class JoinServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		RequestDispatcher dp=request.getRequestDispatcher("member/joinForm.jsp");
+		RequestDispatcher dp = request.getRequestDispatcher("member/updateForm.jsp");
 		dp.forward(request, response);
 	}
 
@@ -40,13 +41,9 @@ public class JoinServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
-	
-		request.setCharacterEncoding("UTF-8");
-		response.setCharacterEncoding("UTF-8");
 		
-		MemberDao mdao = MemberDao.getInstance();
-		MemberDto mdto =new MemberDto();
+		request.setCharacterEncoding("UTF-8");
+		MemberDto mdto= new MemberDto();
 		
 		mdto.setName(request.getParameter("name"));
 		mdto.setUserid(request.getParameter("userid"));
@@ -55,31 +52,16 @@ public class JoinServlet extends HttpServlet {
 		mdto.setPhone(request.getParameter("phone"));
 		mdto.setAdmin(Integer.parseInt(request.getParameter("admin")));
 		
-		int result=mdao.insertMember(mdto);
+		MemberDao mdao=MemberDao.getInstance();
 		
-		if(result==1) {request.setAttribute("message", "Welcome!");}
-		else {request.setAttribute("message", "Error. Please contact the admin.");}
+		int result =mdao.updateMember(mdto);
 		
-		RequestDispatcher dp=request.getRequestDispatcher("member/loginForm.jsp");
-		dp.forward(request, response);
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+		if(result==1) {
+			HttpSession session=request.getSession();
+			session.setAttribute("loginUser", mdto);
+		}
+		RequestDispatcher rd=request.getRequestDispatcher("main.do");
+		rd.forward(request, response);
 	}
 
 }
