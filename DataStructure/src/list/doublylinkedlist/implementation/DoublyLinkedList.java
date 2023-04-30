@@ -20,6 +20,9 @@ public class DoublyLinkedList {
 	public void addFirst(Object input) {
 		Node newNode =new Node(input);
 		newNode.next =head;
+		
+		if(head !=null)	head.prev = newNode;
+		
 		head = newNode;
 		size++;
 		if(head.next==null) {
@@ -33,6 +36,7 @@ public class DoublyLinkedList {
 			addFirst(input);
 		}else {
 			tail.next=newNode;
+			newNode.prev=tail;
 			tail=newNode;
 			size++;
 		}
@@ -40,11 +44,19 @@ public class DoublyLinkedList {
 	}
 	
 	Node node(int index) { //it should not be public
-		Node x = head;
-		for(int i=0; i<index;i++) {
-			x=x.next;
-		}
+		if(index<size/2) {
+			Node x = head;
+			for(int i=0; i<index;i++) {
+				x=x.next;
+			}
 		return x;
+		}else {
+			Node x = tail;
+			for(int i=size-1; i>index; i--) {
+				x=x.prev;
+			}
+			return x;
+		}
 	}
 	
 	public void add(int k, Object input) {
@@ -55,7 +67,11 @@ public class DoublyLinkedList {
 			Node temp2=temp1.next;
 			Node newNode = new Node(input);
 			temp1.next=newNode;
+			newNode.prev=temp1;
 			newNode.next=temp2;
+			if(temp2 !=null) {
+				temp2.prev=newNode;
+			}
 			size++;
 			if(newNode.next==null) {
 				tail=newNode;
@@ -84,6 +100,9 @@ public class DoublyLinkedList {
 		head=head.next;
 		Object returnData=temp.data;
 		temp=null;
+		if(head!=null) {
+			head.prev=null;
+		}
 		size--;
 		return returnData;
 	}
@@ -95,6 +114,9 @@ public class DoublyLinkedList {
 		Node temp = node(k-1);
 		Node todoDeleted=temp.next;
 		temp.next=temp.next.next;
+		if(temp.next!=null) {
+		temp.next.prev=temp;
+		}
 		Object returnData=todoDeleted;
 		if(todoDeleted==tail) {
 			tail=temp;
