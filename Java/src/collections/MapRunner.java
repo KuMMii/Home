@@ -15,13 +15,13 @@ public class MapRunner {
 		for(char character:chars) {
 			//Get the character
 			Integer integer=occurances.get(character);
+			//if it is there, we increment the count
+			//if it is not there, initialize to 1
 			if(integer==null) {
 				occurances.put(character, 1);
 			}else {
 				occurances.put(character, integer+1);
 			}
-			//if it is there, we increment the count
-			//if it is not there, initialize to 1
 		}
 		System.out.println(occurances);
 		
@@ -33,13 +33,13 @@ public class MapRunner {
 		for(String word:words) {
 			//Get the character
 			Integer integer=stringOccurances.get(word);
+			//if it is there, we increment the count
+			//if it is not there, initialize to 1
 			if(integer==null) {
 				stringOccurances.put(word, 1);
 			}else {
 				stringOccurances.put(word, integer+1);
 			}
-			//if it is there, we increment the count
-			//if it is not there, initialize to 1
 		}
 		System.out.println(stringOccurances);
 	}
